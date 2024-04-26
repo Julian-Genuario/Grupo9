@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en línea Istea Grupo 9</title>
+    <link rel="stylesheet" href="styles.css"><!-- Enlace Con el CSS (todo lo referido a estilo en la tienda) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"><!-- Linkeo de Boostrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">><!-- Linkeo FontAwesome -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"><!-- Barra de navegación -->
+        <a class="navbar-brand" href="#">Tienda ISTEA Grupo 9</a><!-- Logotipo y nombre de la tienda -->
+        <!-- Botón para mostrar/ocultar el menú -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+         <!-- Contenedor de enlaces de navegación -->
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                 <!-- Contenedor de enlaces de navegación -->
+                <li class="nav-item active">
+                    
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                  <!-- Ícono del carrito de compras con un contador -->
+                <li class="nav-item chart-nav" onclick="toggleCartSidebar()">
+                    <a>
+                        <i class="fa fa-shopping-cart" aria-hidden="true">
+                            <span id="cart-count">0</span>
+                        </i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+ <!-- Sección donde se mostrarán los productos -->
+    <section id="products-container" class="product-grid">
+
+    </section>
+   <!-- Modal para mostrar detalles del producto -->
+    <div id="product-modal" class="modal">
+    </div>
+ <!-- Barra lateral para mostrar el carrito de compras -->
+    <aside id="cart-sidebar" class="cart-sidebar">
+    </aside>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Tienda en línea de ISTEA. Todos los derechos reservados al grupo 9 de Juli y Marquitos.</p>
+    </footer>
+
+ <!-- Contenedor para mostrar alertas -->
+    <div id="alert-container" class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+
+    </div>
+     <!-- Modal para mostrar detalles del producto -->
+    <div class="modal fade" id="productDetailsModal" tabindex="-1" aria-labelledby="productDetailsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productDetailsModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" onclick="addToCartFromModal()">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- Enlaces del Javascript -->
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

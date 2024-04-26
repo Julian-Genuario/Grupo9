@@ -1,0 +1,1 @@
+![Resultado del analisis de Lighthouse visto en clase](image.png)
